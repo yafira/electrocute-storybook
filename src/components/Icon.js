@@ -1,13 +1,58 @@
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
+import PropTypes from 'prop-types'
 
-const Icon = ({ iconSize }) => {
+function Icon({ iconSize, iconMargin, iconList }) {
+	const iconContainerStyle = {
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		flexWrap: 'wrap',
+	}
+
+	const iconStyle = {
+		margin: iconMargin,
+	}
+
 	return (
-		<div>
-			<h1>Default Icons</h1>
-			<FontAwesomeIcon icon={faHouse} size={iconSize} />
+		<div style={iconContainerStyle}>
+			{/* Default Icons */}
+			{iconList.slice(0, 10).map((icon, index) => (
+				<FontAwesomeIcon
+					key={index}
+					icon={icon}
+					size={iconSize}
+					style={iconStyle}
+				/>
+			))}
+
+			{/* Actionable Icons */}
+			{iconList.slice(10, 13).map((icon, index) => (
+				<FontAwesomeIcon
+					key={index}
+					icon={icon}
+					size={iconSize}
+					style={iconStyle}
+				/>
+			))}
+
+			{/* Controls */}
+			{iconList.slice(13).map((icon, index) => (
+				<FontAwesomeIcon
+					key={index}
+					icon={icon}
+					size={iconSize}
+					style={iconStyle}
+				/>
+			))}
 		</div>
 	)
+}
+
+Icon.propTypes = {
+	iconSize: PropTypes.string,
+	iconMargin: PropTypes.string,
+	iconList: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default Icon

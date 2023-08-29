@@ -1,17 +1,60 @@
 import React from 'react'
-import Icon from '../components/Icon'
+import IconComponent from '../components/Icon'
+import {
+	faHouse,
+	faRotate,
+	faGear,
+	faCircleQuestion,
+	faCircleInfo,
+	faRightFromBracket,
+	faUser,
+	faStar,
+	faMagnifyingGlass,
+	faTriangleExclamation,
+	faCircleXmark,
+	faMicrophone,
+	faLocationDot,
+	faSun,
+	faMoon,
+} from '@fortawesome/free-solid-svg-icons'
 
-// defines the meta information for the story
 export default {
 	title: 'Components/Icon',
-	component: Icon,
+	component: IconComponent,
 }
 
-// template for the story
-const Template = (args) => <Icon {...args} />
+const Template = (args) => <IconComponent {...args} />
 
-// individual stories
-export const Default = Template.bind({})
-Default.args = {
-	iconSize: '1x', // Default icon size for this story
+export const DefaultIcons = Template.bind({})
+DefaultIcons.args = {
+	iconSize: '2x',
+	iconMargin: '20px',
+	iconList: [
+		faHouse,
+		faRotate,
+		faGear,
+		faCircleQuestion,
+		faCircleInfo,
+		faRightFromBracket,
+		faUser,
+		faStar,
+		faMagnifyingGlass,
+		faTriangleExclamation,
+	],
+}
+
+// Second story with another set of icons
+export const ActionableIcons = Template.bind({})
+ActionableIcons.args = {
+	iconSize: '2x',
+	iconMargin: '10px',
+	iconList: [faCircleXmark, faMicrophone, faLocationDot],
+}
+
+// Third story with a different set of icons
+export const ControlIcons = Template.bind({})
+ControlIcons.args = {
+	iconSize: '2x',
+	iconMargin: '10px',
+	iconList: [faSun, faMoon],
 }
