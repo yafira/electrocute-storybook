@@ -45,16 +45,13 @@ Small.args = {
 	children: (
 		<>
 			<Typography
+				variant='body3'
+				component='div'
 				style={{
 					color: '#000000',
 					padding: '20px',
 				}}
-			>
-				Card
-			</Typography>
-			<Typography variant='body2' component='div'>
-				Some usage of card information.
-			</Typography>
+			></Typography>
 		</>
 	),
 }
